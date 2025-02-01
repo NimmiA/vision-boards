@@ -1,0 +1,157 @@
+.vision-card {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.vision-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.vision-card img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  object-position: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.vision-card h3 {
+  padding: 20px 25px;
+  margin: 0;
+  font-size: 22px;
+  color: #333;
+  font-weight: 500;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.vision-card.quote {
+  background-color: #ffffff;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vision-card.quote h3 {
+  color: #4a4a4a;
+  font-size: 26px;
+  line-height: 1.4;
+  text-align: center;
+  padding: 0;
+  font-weight: 400;
+}
+
+.vision-card.text {
+  background-color: #4a6741;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vision-card.text h3 {
+  color: white;
+  font-size: 32px;
+  text-align: center;
+  padding: 0;
+  font-weight: 500;
+}
+
+.vision-card.image {
+  background-color: #ffffff;
+}
+
+.vision-card.image h3 {
+  padding: 20px;
+  font-size: 20px;
+  color: #333;
+  text-align: left;
+}
+
+.card-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 10;
+}
+
+.vision-card:hover .card-controls {
+  opacity: 1;
+}
+
+.remove-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: #dc3545;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+
+.remove-button:hover {
+  background: #dc3545;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Adjust card styles for different layouts */
+.masonry .vision-card {
+  height: auto;
+  min-height: 200px;
+}
+
+.carousel .vision-card {
+  height: 400px;
+}
+
+@media (max-width: 768px) {
+  .vision-card h3 {
+    font-size: 18px;
+    padding: 15px 20px;
+  }
+
+  .vision-card.quote h3 {
+    font-size: 22px;
+  }
+
+  .vision-card.text h3 {
+    font-size: 26px;
+  }
+
+  .vision-card.image h3 {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  .card-controls {
+    top: 5px;
+    right: 5px;
+  }
+
+  .remove-button {
+    width: 28px;
+    height: 28px;
+  }
+} 

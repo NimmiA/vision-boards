@@ -3,13 +3,13 @@ import Sidebar from './components/Sidebar';
 import VisionBoard from './components/VisionBoard';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <div className="app">
       {/* <Sidebar /> */}
       <VisionBoard />
     </div>
   );
-}
+};
 
-export default App;
+export default App; 
