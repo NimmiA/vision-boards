@@ -89,6 +89,7 @@ const VisionBoard = () => {
     }
   }, [drawingColor, lineWidth]);
 
+    // Randomly positions vision cards for 'wall' layout
   const randomizePositions = () => {
     const updatedCards = cards.map(card => ({
       ...card,
@@ -99,6 +100,8 @@ const VisionBoard = () => {
     setCards(updatedCards);
   };
 
+
+    // Handles starting a drawing stroke
   const startDrawing = ({ nativeEvent }) => {
     if (!drawingMode) return;
     const { offsetX, offsetY } = nativeEvent;
@@ -112,11 +115,14 @@ const VisionBoard = () => {
     setDrawingHistory(prev => [...prev, imageData]);
   };
 
+    // Finishes drawing stroke
   const finishDrawing = () => {
     if (!drawingMode) return;
     contextRef.current.closePath();
     setIsDrawing(false);
   };
+
+    // Handles drawing on the canvas
 
   const draw = ({ nativeEvent }) => {
     if (!drawingMode || !isDrawing) return;
@@ -124,6 +130,8 @@ const VisionBoard = () => {
     contextRef.current.lineTo(offsetX, offsetY);
     contextRef.current.stroke();
   };
+
+    // Undo the last drawing stroke
 
   const undoLastDraw = () => {
     if (drawingHistory.length === 0) return;
@@ -143,6 +151,8 @@ const VisionBoard = () => {
     }
   };
 
+    // Clears the canvas
+
   const clearCanvas = () => {
     const canvas = canvasRef.current;
     const context = canvas.getContext('2d');
@@ -150,15 +160,19 @@ const VisionBoard = () => {
     setDrawingHistory([]);
   };
 
+    // Adds a new vision card
+
   const handleAddVision = (newVision) => {
     setCards([...cards, { ...newVision, id: cards.length + 1 }]);
     setIsModalOpen(false);
   };
 
+  // Removes a vision card by ID
   const handleRemoveVision = (id) => {
     setCards(cards.filter(card => card.id !== id));
   };
 
+    // Downloads the vision board as a PDF
   const downloadAsPDF = async () => {
     const board = document.querySelector('.vision-board');
     const canvas = await html2canvas(board);

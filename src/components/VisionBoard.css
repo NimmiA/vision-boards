@@ -164,6 +164,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: 60px;
+  background-image: url('../assets/wall-texture-img.jpg');
   gap: 20px;
   justify-content: center;
   align-items: center;
