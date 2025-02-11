@@ -52,7 +52,7 @@ const VisionBoard = () => {
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
   const [drawingHistory, setDrawingHistory] = useState([]);
-  const [boardTitle, setBoardTitle] = useState('My Vision Board');
+  const [boardTitle, setBoardTitle] = useState('My Visions');
   const [isEditingTitle, setIsEditingTitle] = useState(false);
 
   useEffect(() => {
