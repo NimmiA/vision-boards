@@ -40,12 +40,7 @@ const VisionBoard = () => {
       type: 'quote',
       backgroundColor: '#ffffff'
     },
-    {
-      id: 6,
-      title: 'Wild & Free',
-      type: 'text',
-      backgroundColor: '#4a6741'
-    }
+
   ]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
