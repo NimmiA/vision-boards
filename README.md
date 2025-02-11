@@ -1,6 +1,9 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A sample vision board app.
+
+Add your visions and goals to the vision board.
 
 ## Available Scripts
 
